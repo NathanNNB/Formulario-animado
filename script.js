@@ -41,3 +41,24 @@ form.addEventListener("animationend",(event) =>{
     if(event.animationName === "down")
     form.style.display = "none";
 });
+
+  /* Squares*/
+  const ulSquares = document.querySelector("ul.squares");
+  for (let i =0; i < 11; i++){
+    const li = document.createElement("li");
+    const random  = (min,max) => Math.random() * (max - min)+ min;
+    const size = Math.floor(random(40,120));
+    const position = random(15, 85);
+    const delay = random(5, 0.1);
+    const duration = random(18, 5);
+
+    li.style.width = `${size}px`;
+    li.style.height = `${size}px`;
+    li.style.bottom = `${0}px`;
+    li.style.left = `${position}%`;
+    li.style.animationDelay =  `${delay}s`;
+    li.style.animationDuration = `${duration}s`;
+    li.style.animationTimingFunction = `cubic-bezier(${Math.random(),Math.random(),Math.random(),Math.random()})`
+    
+    ulSquares.appendChild(li);
+  }
